@@ -1,0 +1,72 @@
+
+.text-container{
+    
+    @include respond-to('laptop') {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    .text-box__left{
+        text-align: left;
+        max-width: 947px;
+    
+        @include respond-to('tablet') {
+            width: 100%;
+        }
+    }
+    h1{
+        color: $primary;
+    }
+
+    p{
+        margin: 44px 0;
+    }
+    
+    .picture-box{
+        width: 100%;
+        img{
+            max-width:100%;
+            height:auto;
+        }
+    }
+    &--box{
+        max-width: 1364px;
+        margin-left: auto;
+
+        //@include respond-to('large') {
+        //    margin: 0 25px;
+        //
+        //}
+    }
+    
+    &--small{
+        .text-box{
+            width: 65%;
+            @include respond-to('tablet') {
+                width: 100%;
+            }
+        }
+    }
+    &--half-size{
+        text-align: center;
+        .text-box{
+            width: 50%;
+            margin: auto;
+            @include respond-to('tablet') {
+                width: 100%;
+            }
+        }
+    }
+    
+    &--center{
+        margin-bottom: 64px;
+        .text-box__center{
+        text-align: center;
+        }
+    }
+    
+    .text-title__primary-color{
+        color: $primary;
+    }
+}
+

@@ -1,0 +1,44 @@
+.text-picture-container{
+    display: flex;
+    margin: 325px auto;
+    
+    @include respond-to('laptop') {
+        margin: 250px auto;
+    }
+    @include respond-to('medium') {
+        display: block;
+    }
+    @include respond-to('tablet') {
+        margin: 150px auto;
+    }
+    @include respond-to('xs') {
+        margin: 50px auto;
+    }
+    
+    .inner-box{
+        box-sizing: border-box;
+        text-align: left;
+        padding: 0 200px 0 80px;
+        max-width: 50%;
+        @include respond-to('desktop') {
+            padding: 0 25px;
+        }
+        @include respond-to('medium') {
+            padding: 0;
+            max-width: inherit;
+            
+        }
+    }
+    
+    .picture-box{
+        width: 100%;
+        img {
+            display: block;
+            max-width: 100%;
+            margin: auto;
+        }
+        @include respond-to('desktop') {
+            padding-top: 26px;
+        }
+    }
+}

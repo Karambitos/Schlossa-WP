@@ -1,0 +1,177 @@
+.fixed-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 11;
+}
+
+.header{
+    display: flex;
+    padding: 0 24px;
+    margin: auto;
+    max-width: 1258px;
+    align-items: center;
+    
+    @include respond-to('tablet') {
+        align-items: center;
+        min-height: 50px;
+    }
+    
+    &__burger {
+        display: none;
+    }
+}
+.header__logo{
+    margin-right: auto;
+    
+    a{
+        display: block;
+    }
+    
+    img{
+        width: 150px;
+        @include respond-to('tablet') {
+            width: 115px;
+        }
+    }
+}
+.bar-container{
+    display: flex;
+    @include respond-to('tablet') {
+        @include animate(all);
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        flex-wrap: wrap;
+        width: 0;
+        background-color: white;
+        height: 100%;
+        overflow: hidden;
+        z-index: 5;
+        
+        &.active{
+            @include animate(all);
+            width: 50%;
+            @include respond-to('phone') {
+                width: 80%;
+                overflow: auto;
+            }
+        }
+    }
+    
+    .navbar{
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.overflow-menu{
+    @include animate(all);
+    z-index: -1;
+    opacity: 0;
+}
+.bar-container.active + .overflow-menu{
+    @include animate(all);
+    background-color: $text;
+    position: fixed;
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.navbar{
+    @include respond-to('tablet') {
+        margin: 150px 10px 10px 75px;
+    
+        @include respond-to('phone') {
+            margin: 150px 10px 10px 25px;
+        }
+    }
+    .navbar__nav{
+        display: flex;
+        @include respond-to('tablet') {
+            flex-wrap: wrap;
+        }
+    }
+    .menu-item{
+        
+        font-family: Aglet_Slab;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 14px 25px;
+        letter-spacing: 0.25px;
+        cursor: pointer;
+
+        a{
+            border-bottom: 1px solid transparent;
+        }
+        a:hover{
+            @include animate(all);
+            color: inherit;
+            border-bottom: 1px solid $primary;
+            
+        }
+        @include respond-to('tablet') {
+            width: 100%;
+        }
+    }
+}
+
+.header__social,
+.footer__social{
+
+    .social{
+        display: flex;
+        padding: 16px 0;
+        
+        .icon{
+            display: block;
+            color: white;
+            text-align: center;
+        }
+        li{
+            @include animate(all);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            margin-left: 8px;
+            
+            &:hover{
+                @include animate(all);
+                transform: scale(1.2);
+            }
+        }
+        li:first-child{
+            margin-left: 100px;
+        }
+        li:nth-child(2n-1){
+            background-color: $text;
+        }
+        li:nth-child(2n){
+            background-color: $primary;
+        }
+        
+    }
+}
+.header__social{
+    .social{
+        li:first-child{
+            @include respond-to('medium') {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,69 @@
+.accordion{
+    position: relative;
+    border-top: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    
+    padding-bottom: 30px;
+    margin-bottom: 155px;
+    .text-container {
+        margin-top: 0;
+    }
+    .accordion-container{
+        @include animate(all);
+        max-height: 180px;
+        overflow: hidden;
+        margin: auto;
+        max-width: 1258px;
+    
+        @include respond-to('xs') {
+            max-height: 290px;
+        }
+        
+        p{
+            img{
+                max-width: 100%;
+                object-fit: cover;
+                object-position: center;
+                @include respond-to('phone') {
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+    
+    .accordion-container.active{
+        @include animate(all);
+        height: 100%;
+        max-height: inherit;
+    }
+    .accordion-btn{
+        @include animate(all);
+    
+    }
+    .accordion-container.active + .accordion-btn{
+        @include animate(all);
+        transform: rotate(180deg);
+        &:hover{
+            transform: rotate(180deg) scale(1.2);
+        }
+    }
+    
+    
+    .icon{
+        position: absolute;
+        cursor: pointer;
+        bottom: -80px;
+        left: 50%;
+        width: 45px;
+        height: 45px;
+        transform: translateX(-50%);
+        color: $primary;
+    
+        &:hover{
+            transform: translateX(-50%) scale(1.2);
+        }
+        &:before {
+            font-size: 40px;
+        }
+    }
+}

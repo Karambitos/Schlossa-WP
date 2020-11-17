@@ -1,0 +1,73 @@
+.inner-page{
+    margin-top: 121px;
+    padding: 0 25px;
+}
+
+
+.error-container{
+    border-top: 2px solid #c0a253;
+    border-bottom: 2px solid #c0a253;
+    margin-top: 121px;
+    @include respond-to('tablet') {
+        margin-top: 102px;
+    }
+    .content{
+        max-width: 1114px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        text-align: center;
+        @media (min-width: 768px){
+            padding: 100px 0;
+        }
+        @media (min-width: 1024px) {
+            padding: 160px 0;
+        }
+    }
+    .error-title {
+        text-align: center;
+        margin: 0 0 30px;
+        display: inline-block;
+        padding: 40px 60px 40px;
+        border-radius: 30px;
+        background-color: $primary;
+        font-size: 70px;
+        line-height: 70px;
+        font-weight: 700;
+        color: $text;
+        @media (min-width: 768px) {
+            font-size: 150px;
+            line-height: 150px;
+            padding: 40px 70px 40px;
+            border-radius: 40px;
+            margin: 0 0 40px;
+        }
+        @media (min-width: 1024px){
+            font-size: 250px;
+            line-height: 250px;
+            padding: 50px 80px 50px;
+            border-radius: 70px;
+            margin: 0 0 60px;
+        }
+    }
+    
+    .error-subtitle {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 25px;
+        @media (min-width: 768px){
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 35px;
+        }
+        @media (min-width: 1024px){
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+    }
+    
+}

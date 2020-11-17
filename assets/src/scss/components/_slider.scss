@@ -1,0 +1,154 @@
+.slider{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 323px;
+    
+    @include respond-to('laptop') {
+        margin-bottom: 250px;
+    }
+    @include respond-to('tablet') {
+        margin-bottom: 150px;
+    }
+    @include respond-to('xs') {
+        margin-bottom: 50px;
+    }
+    
+    .swiper-slide{
+        width: 100%;
+    }
+
+    .swiper-slide:hover{
+        .swiper-text{
+            @include animate(all);
+            opacity: 0.85;
+        }
+    }
+
+    .swiper-text{
+        @include animate(all);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        color: $white;
+        background-color: $primary;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        padding: 40px 70px;
+    }
+}
+
+.swiper-container__right{
+
+    .swiper-slide{
+        height: 395px;
+        width: 395px !important;
+    
+        @include respond-to('xs') {
+            height: 312px;
+            width: 312px !important;
+            background-size: cover;
+        }
+    }
+}
+
+.swiper-container__left{
+    min-height: 660px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    @include respond-to('xs') {
+        min-height: 445px;
+    }
+
+    .swiper-slide{
+        //max-width: 498px;
+        height: 620px;
+        width: 498px !important;
+    
+        @include respond-to('xs') {
+            height: 312px;
+            width: 312px !important;
+            background-size: cover;
+        }
+    }
+
+    .date{
+        position: absolute;
+        top: -34px;
+        right: 50px;
+
+        font-family: "Aglet Slab - Extra Light";
+        font-size: 33px;
+        font-weight: 400;
+        line-height: 29.17px;
+        text-transform: uppercase;
+        box-sizing: border-box;
+
+        text-align: center;
+        padding: 22px 24px;
+        width: 87px;
+        height: 125px;
+
+        background-color: $dark;
+        color: $white;
+    
+        @include respond-to('xs') {
+            top: -60px;
+            font-size: 21px;
+            width: 60px;
+            height: 100px;
+            padding: 8px 15px;
+        }
+    }
+    .swiper-button-prev{
+        display: none;
+    }
+    .swiper-button-next{
+        display: block;
+        position: absolute;
+        width: 37px;
+        height: 95px;
+        background-color: $text;
+        color: $white;
+
+        font-size: 40px;
+        left: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    
+        @include respond-to('xs') {
+            top: 65%;
+        }
+
+        &:before{
+            position: relative;
+            content: '';
+            width: 25px;
+            height: 2px;
+            background-color: $white;
+            display: block;
+            top: 45%;
+            left: 25%;
+            transform: translate(-50%, -50%) rotate(40deg);
+        }
+        &:after{
+            position: relative;
+            content: '';
+            width: 25px;
+            height: 2px;
+            background-color: $white;
+            display: block;
+            top: 60%;
+            left: 25%;
+            transform: translate(-50%, -50%) rotate(-40deg);
+        }
+    }
+}

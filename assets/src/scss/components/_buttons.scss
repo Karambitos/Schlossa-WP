@@ -1,0 +1,125 @@
+button,
+.button{
+    @include animate(all);
+    position: relative;
+    text-transform: uppercase;
+    background-color: $text;
+    padding: 11px 34px;
+    color: $white;
+    
+    
+    font-family: Aglet_Slab;
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: 0.52px;
+    
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    &:focus,
+    &:active,
+    &:hover{
+        @include animate(all);
+        color: $primary;
+        background-color: $dark;
+        outline: none;
+    }
+    
+}
+
+.section-btn{
+    background-color: $primary;
+    font-size: 29px;
+    letter-spacing: 5.83px;
+    padding: 12px 84px 12px 102px;
+    max-width: 303px;
+    min-height: 47px;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-flex;
+
+    @include respond-to('xs') {
+        padding: 12px;
+        max-width: 250px;
+    }
+    .title{
+        position: relative;
+        z-index: 2;
+    }
+    
+    .bg{
+        @include animate(all);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        z-index: 1;
+        background-color: $primary;
+        opacity: 0;
+    }
+    
+    &:before{
+        @include animate(all);
+        content: '';
+        position: absolute;
+
+        width: 140px;
+        height: 2px;
+        background-color: #ffffff;
+        
+        left: 0;
+        transform: rotate(-45deg);
+        
+        z-index: 3;
+        @include respond-to('xs') {
+            left: -20px;
+        }
+    }
+    
+    &:after{
+        @include animate(all);
+        content: '';
+        position: absolute;
+        
+        height: 2px;
+        background-color: #ffffff;
+        opacity: 0;
+        
+        left: 20px;
+        bottom: -26px;
+        width: 351px;
+        @include respond-to('xs') {
+            left: 0;
+            max-width: 250px;
+        }
+    }
+    &:focus,
+    &:active,
+    &:hover{
+        outline: none;
+        color: $white;
+        background-color: $primary;
+        .bg{
+            @include animate(all);
+            opacity: 1;
+        }
+        &:before {
+            @include animate(all);
+            z-index: -1;
+        }
+        &:after{
+            @include animate(all);
+            opacity: 1;
+        }
+    }
+}

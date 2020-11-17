@@ -1,0 +1,57 @@
+
+.hero{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $text;
+    color: $white;
+    height: 701px;
+    max-width: 100%;
+    margin-bottom: 58px;
+    margin-top: 121px;
+    //background-image: url("../../img/hero.png");
+    @include respond-to('tablet') {
+        margin-top: 102px;
+    }
+    @include respond-to('xs') {
+        height: 550px;
+    }
+    .container{
+        position: relative;
+        height: 100%;
+
+        @media screen and (max-width: 1330px) {
+            margin: 0 25px;
+        }
+    }
+    
+    &__title{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        max-width: 400px;
+        @include respond-to('xs') {
+            max-width: 250px;
+        }
+    
+        h2.h1{
+            font-family: 'Aglet_Slab';
+            font-size: 46px;
+            font-weight: 400;
+            line-height: 54.17px;
+            margin: 0;
+            @include respond-to('xs') {
+                font-size: 29px;
+            }
+        }
+        
+        p{
+            margin: 27px 0;
+        }
+    
+        .button{
+            margin-top: 110px;
+        }
+    }
+}

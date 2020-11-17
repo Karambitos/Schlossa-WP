@@ -1,0 +1,1 @@
+User was created. User id: 2 User name: client. User password: PSnucbTxOE28 User email: test@test.com
